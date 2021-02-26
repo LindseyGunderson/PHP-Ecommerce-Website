@@ -3,7 +3,7 @@
 // This class will handle the database connection and the query parameters using PDO.
 
 
-//Reference https://culttt.com/2012/10/01/roll-your-own-pdo-php-class/
+//Reference for this class https://culttt.com/2012/10/01/roll-your-own-pdo-php-class/
 
 class PDOAgent  {
 

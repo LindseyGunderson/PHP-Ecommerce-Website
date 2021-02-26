@@ -28,7 +28,7 @@ class ProductMapper {
         // get all products w/ limit for front page
         static function getRecentlyAddedProducts() : array{
 
-            $selectAll = "SELECT * FROM Products ORDER BY RAND() LIMIT 2";
+            $selectAll = "SELECT * FROM Products ORDER BY RAND() LIMIT 3";
         
             self::$db->query($selectAll);
         
