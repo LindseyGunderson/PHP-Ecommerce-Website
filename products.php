@@ -1,6 +1,4 @@
 <?php
-
-// include the database connection
 require_once('inc/config.inc.php');
 
 // entity classes
@@ -11,20 +9,20 @@ require_once('inc/entities/ProductMapper.class.php');
 include_once('inc/utilities/PDOAgent.class.php');
 require_once('inc/utilities/Page.class.php');
 
-    // title for products page
-    PageIndex::$title = "";
+    // set the title for the page
+    PageIndex::$title = "All Products";
 
-    // header for products page
+    // show the header for the page
     PageIndex::header();
 
-    // initialize the database connections to the products
+    // initialize the connection to the database
     ProductMapper::initialize("Products");
-    
-    // query all the products for the product page
+
+    // query all the products from the database
     $products = ProductMapper::getProducts();
 
-    // show the relative information about each product
-    PageIndex::showProducts($products);
+    // show all products that are in the database and display the header
+    PageIndex::showProducts($products, "All Products");
 
     // include the footer
     PageIndex::footer();
