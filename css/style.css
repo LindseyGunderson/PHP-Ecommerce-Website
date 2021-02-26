@@ -127,6 +127,7 @@ body {
 .product-card {
 
 	margin: auto;
+    background: #FFF;
 	margin-top: 6vh;
     max-width: 950px;
     width: 100%;
