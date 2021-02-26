@@ -21,7 +21,7 @@ static function header(){ ?>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Ecommerce Website</a>
+                <a class="navbar-brand" href="index.php"><img src="imgs/ck_logo.jpg" alt="Cozy Kaffe Logo" srcset="" width="45px"></a>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
