@@ -1,12 +1,16 @@
 <?php class PageIndex {
 
+
+// static page title for html
 static public $title;
 
+
+// header function for each page
 static function header(){ ?>
 
 <head>
 		<meta charset="utf-8">
-		<title>$title</title>
+		<title> <?php echo self::$title; ?></title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 		<link href="css/style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
@@ -41,11 +45,11 @@ static function header(){ ?>
 
 <?php }
 
-
-    static function showProducts($productList){ 
+    // show all the products in their UI cards, with the associated title
+    static function showProducts($productList, $title){ 
 
             echo '<div class="container mt-5">
-            <h3 class="recent-products-title">Recently Added Products</h3>
+            <h3 class="recent-products-title">'. $title . '</h3>
                 <div class="row d-flex justify-content-center g-1">';
                 foreach ($productList as $product):
 
@@ -71,7 +75,8 @@ static function header(){ ?>
 
 
 
-
+// Show the single product page
+// This function will query the database and show the single product based on the product ID in the url
   static function showSingleProduct($singleProduct){
 
     echo '<div class="container">
@@ -82,7 +87,7 @@ static function header(){ ?>
                     <div class="col-md-6">
                     <div> <i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span> </div>
                         <div class="product-main-img">
-                            <div class="text-center p-4"> <img src="imgs/'.$singleProduct->getImg() .'" /> </div>
+                            <div class="text-center p-4"> <img src="imgs/'.$singleProduct->getImg() .'"  width="425" class="single-product-img" /> </div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -96,7 +101,7 @@ static function header(){ ?>
                             </div>
                                 <p class="product-description">'. $singleProduct->getDesc() .'</p>
                                 <form action="cart.php?id='.$singleProduct->getID() .'" method="POST">
-                                    <input class="form-control" type="number" name="quantity" value="1" min="1" placeholder="Quantity" required>
+                                    <input class="form-control" type="number" name="quantity" value="1" placeholder="Quantity"  readonly>
                                     <input type="hidden" name="product_id" value="'. $singleProduct->getID() .'">
                                 
                             <input class="btn btn-block" type="submit" name="add" value="Add to Cart">
@@ -111,6 +116,7 @@ static function header(){ ?>
 </div>';
  }
 
+//  This will show the header for the shopping cart with and count the number of items in the cart.
     static function shoppingCartHeader($items){
 
         echo'<div class="card">
@@ -134,13 +140,15 @@ static function header(){ ?>
                 </div>';
 
     }
+
+    // Show each item that is in the shopping cart with their quantity and calculate the total
     static function showShoppingCart($cartItem, $qty){
 
         echo '<div class="row">
             <div class="row border-top border-bottom">
                 <div class="row main align-items-center">
                     <div class="col">
-                    <a href="product.php?productID='. $cartItem->getID() .'"><img class="img-fluid shoppingCart-img" src="imgs'.$cartItem->getImg() . '"></a></div>
+                    <a href="product.php?productID='. $cartItem->getID() .'"><img class="img-fluid shoppingCart-img" src="imgs/'.$cartItem->getImg() . '"></a></div>
                     <div class="col">
                         <div class="row"><a href="product.php?productID='. $cartItem->getID() .'">'. $cartItem->getName() . '</a></div>
                     </div>
@@ -153,6 +161,7 @@ static function header(){ ?>
     }
 
 
+    // This will calculate the final total, and taxes for all the items in the shopping cart
     static function shoppingCartCheckout($subtotal) {
 
     echo '<div class="checkout-action-btns">
@@ -184,6 +193,7 @@ static function header(){ ?>
 
     }
 
+    // Displays an empty shopping cart when no items are in or the user clears their cart
     static function emptyShoppingCart($subtotal) {
 
         echo '<div class="card">
@@ -233,6 +243,7 @@ static function header(){ ?>
 
 
 
+    // Shows the order details for the shopping cart
     static function showTotalPrice($subtotal) {
 
         echo '</tbody>
@@ -252,11 +263,11 @@ static function header(){ ?>
 
     }
 
-
+    // footer for the bottom of the page
     static function footer(){ ?>
         </div>
         <footer>
-          <strong><h4>The Footer</h4></strong>
+          <strong><h4></h4></strong>
          
         </footer >
       </body>
