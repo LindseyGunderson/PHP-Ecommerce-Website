@@ -1,8 +1,13 @@
 body {
-
-	padding: 10px;
+    margin: 0px;
+	background-color: #CCC;
 }
 
+header {
+
+    background-color: #FFF;
+    margin: 0px;
+}
 .recently-added-products {
 
 	text-align: center;
