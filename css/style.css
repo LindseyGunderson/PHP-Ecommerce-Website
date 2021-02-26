@@ -63,14 +63,7 @@ body {
 
 
 
-/* new cart */
-body {
-    /* background: #ddd;
-    vertical-align: middle;
-    font-family: sans-serif;
-    font-size: 0.8rem;
-    font-weight: bold */
-}
+/* Shopping Cart Styling */
 
 
 .card {
@@ -139,7 +132,7 @@ a {
 }
 
 
-img {
+.shoppingCart-img {
     width: 4rem;
 }
 

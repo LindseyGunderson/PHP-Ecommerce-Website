@@ -125,7 +125,7 @@ static function header(){ ?>
             <div class="row border-top border-bottom">
                 <div class="row main align-items-center">
                     <div class="col">
-                    <a href="product.php?productID='. $cartItem->getID() .'"><img class="img-fluid" src="https://picsum.photos/200/200"></a></div>
+                    <a href="product.php?productID='. $cartItem->getID() .'"><img class="img-fluid shoppingCart-img" src="https://picsum.photos/200/200"></a></div>
                     <div class="col">
                         <div class="row"><a href="product.php?productID='. $cartItem->getID() .'">'. $cartItem->getName() . '</a></div>
                     </div>
