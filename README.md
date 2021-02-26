@@ -13,7 +13,7 @@ This is a mock up of an ecommerce website that pulls its the product catelogue f
 
 ## Installation
 #### Database
-In order this application to run, you will need to connect to a MySQL server. MAMP is suggested. Once you've created the database, use the included sql file to set up the structure of your database. You can add or remove products to fit yoru needs for testing.
+In order this application to run, you will need to connect to a MySQL server. MAMP is suggested. Once you've created the database, use the included sql file to set up the structure of your database. You can add or remove products to fit your needs for testing.
 
 ### Connections
 In order to connect to your database, you will need to add your credentials to `inc/config.php`. Make all variables match your development environment.
