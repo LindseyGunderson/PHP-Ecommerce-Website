@@ -44,26 +44,28 @@ static function header(){ ?>
 
     static function showProducts($productList){ 
 
-      echo '<div class="recently-added-products">
-                <h1>Recently Added Products</h1>
-            </div>
-            <p>' . count($productList). ' Products</p>
-           <div class="containter col-lg-3 mb-4">';
-               foreach ($productList as $product): 
+            echo '<div class="container mt-5">
+            <h3 class="recent-products-title">Recently Added Products</h3>
+                <div class="row d-flex justify-content-center g-1">';
+                foreach ($productList as $product):
 
-             echo '
-                        <a href="product.php?productID='.$product->getID() .'">
-                        <div><img src="https://picsum.photos/200/200" alt="">
-                            <span class="name">' .$product->getName() .'</span>
-                            <span class="price">
-                                &dollar;' . $product->getPrice() .'
-                            </span>
-                            </div>
-                        </a>
-                    
-                    ';
-              endforeach;
-        echo '</div>';
+                    echo '<div class="col-md-4">
+                    <a href="product.php?productID='.$product->getID() .'">
+                    <div class="product text-center"> <img src="imgs/'. $product->getImg() .'" width="250">
+                        <div class="px-3">
+                            <h5>' . $product->getName() . '</h5>
+                            <h6> &dollar;' . $product->getPrice() .'</h6>
+                        </div> <span class="dot-background"><span class="inner-dot"><i class="fa fa-arrow-right"></i></span></span>
+                    </div>
+                    </a>
+                </div>';
+
+                endforeach;    
+            '</div>
+        </div>';
+
+
+
 
  }
 
@@ -72,28 +74,41 @@ static function header(){ ?>
 
   static function showSingleProduct($singleProduct){
 
-    echo '<div class="product-wrapper">
-      <img src="https://picsum.photos/500/500" alt="">
-      <div class="single-product-details">
-          <h1 class="product-name">' . $singleProduct->GetName() . '</h1>
-        <span class="price">
-            &dollar;' . $singleProduct->getPrice() . '
-        </span>
-            <div class="product-description">'.
-            $singleProduct->getDesc() . '
+    echo '<div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="product-card">
+                    <div class="row">
+                    <div class="col-md-6">
+                    <div> <i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span> </div>
+                        <div class="product-main-img">
+                            <div class="text-center p-4"> <img src="imgs/'.$singleProduct->getImg() .'" /> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product-details p-4">
+                            <div class="mt-4 mb-4">
+                                <h5 class="product-name">' . $singleProduct->GetName() . '</h5>
+                                <div class="product-price"> 
+                                    <span class="price">&dollar;' . $singleProduct->getPrice() . '</span>
+                                </div>
+                                
+                            </div>
+                                <p class="product-description">'. $singleProduct->getDesc() .'</p>
+                                <form action="cart.php?id='.$singleProduct->getID() .'" method="POST">
+                                    <input class="form-control" type="number" name="quantity" value="1" min="1" placeholder="Quantity" required>
+                                    <input type="hidden" name="product_id" value="'. $singleProduct->getID() .'">
+                                
+                            <input class="btn btn-block" type="submit" name="add" value="Add to Cart">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
-        <form action="cart.php?id='.$singleProduct->getID() .'" method="POST">
-            <input class="form-control" type="number" name="quantity" value="1" min="1" placeholder="Quantity" required>
-            <input type="hidden" name="product_id" value="'. $singleProduct->getID() .'">
-            <div class="product-btn">
-            <input class="btn btn-block" type="submit" name="add" value="Add to Cart">
-            </div>
-        </form>
-       
+        </div>
     </div>
 </div>';
-
-
  }
 
     static function shoppingCartHeader($items){
@@ -125,7 +140,7 @@ static function header(){ ?>
             <div class="row border-top border-bottom">
                 <div class="row main align-items-center">
                     <div class="col">
-                    <a href="product.php?productID='. $cartItem->getID() .'"><img class="img-fluid shoppingCart-img" src="https://picsum.photos/200/200"></a></div>
+                    <a href="product.php?productID='. $cartItem->getID() .'"><img class="img-fluid shoppingCart-img" src="imgs'.$cartItem->getImg() . '"></a></div>
                     <div class="col">
                         <div class="row"><a href="product.php?productID='. $cartItem->getID() .'">'. $cartItem->getName() . '</a></div>
                     </div>
@@ -166,6 +181,7 @@ static function header(){ ?>
             <button class="btn" value="Place Order" name="placeorder">Place Order</button>
         </div>
     </div>';
+
     }
 
     static function emptyShoppingCart($subtotal) {
