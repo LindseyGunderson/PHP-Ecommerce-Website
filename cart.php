@@ -23,7 +23,7 @@ if(isset($_POST['reset'])) {
 
 if(isset($_POST['continueShopping'])){
 
-  header('Location: index.php');
+  header('Location: products.php');
 
 }
 
