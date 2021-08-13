@@ -85,7 +85,9 @@ static function header(){ ?>
                     <div class="product-card">
                     <div class="row">
                     <div class="col-md-6">
-                    <div> <i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span> </div>
+                        <div> 
+                            <div><a href="/products.php" class="back-btn"><i class="fa fa-arrow-left"></a></div></i>
+                        </div>
                         <div class="product-main-img">
                             <div class="text-center p-4"> <img src="imgs/'.$singleProduct->getImg() .'"  width="425" class="single-product-img" /> </div>
                         </div>
