@@ -59,7 +59,8 @@ static function header(){ ?>
                         <div class="px-3">
                             <h5>' . $product->getName() . '</h5>
                             <h6> &dollar;' . $product->getPrice() .'</h6>
-                        </div> <span class="dot-background"><span class="inner-dot"><i class="fa fa-arrow-right"></i></span></span>
+                        </div> 
+                        <div><span class="dot-background"><span class="inner-dot"><i class="fa fa-arrow-right"></i></span></span></div>
                     </div>
                     </a>
                 </div>';
@@ -85,7 +86,9 @@ static function header(){ ?>
                     <div class="product-card">
                     <div class="row">
                     <div class="col-md-6">
-                    <div> <i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span> </div>
+                        <div> 
+                        <div class="back-btn"><a href="/products.php"><i class="fa fa-arrow-left"></i></a></div>
+                        </div>
                         <div class="product-main-img">
                             <div class="text-center p-4"> <img src="imgs/'.$singleProduct->getImg() .'"  width="425" class="single-product-img" /> </div>
                         </div>
