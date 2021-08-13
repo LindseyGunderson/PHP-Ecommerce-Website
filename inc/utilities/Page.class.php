@@ -59,7 +59,7 @@ static function header(){ ?>
                         <div class="px-3">
                             <h5>' . $product->getName() . '</h5>
                             <h6> &dollar;' . $product->getPrice() .'</h6>
-                        </div> <span class="dot-background"><span class="inner-dot"><i class="fa fa-arrow-right"></i></span></span>
+                        </div> <div class="view-product-btn"><span class="dot-background"><span class="inner-dot"><i class="fa fa-arrow-right"></i></span></span></div>
                     </div>
                     </a>
                 </div>';

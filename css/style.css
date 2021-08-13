@@ -12,6 +12,27 @@ header {
 
 /* index.php styling */
 
+.product {
+
+    height: 350px;
+    width: 100%;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 1.2rem;
+    border: transparent;
+
+
+}
+
+.view-product-btn {
+
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+
+}
+
+
+
 .recent-products-title {
 
 	text-align: center;
