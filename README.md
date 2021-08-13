@@ -1,5 +1,11 @@
 # PHP-Ecommerce-Website
  This project takes products from a database and displays them to mutliple pages. The product page will display all products and then the user will be able to view single products and add them to a shopping cart. 
+ 
+ ## Technologies Used
+<img alt="PHP" src="https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=white&style=flat-square"/> <img alt="MySQL" src="https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat-square"/>
+<img alt="HTML5" src="https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=flat-square"/>
+<img alt="CSS3" src="https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=flat-square"/>
+<img alt="Bootstrap" src="https://img.shields.io/badge/-Bootstrap-7952B3?logo=bootstrap&logoColor=white&style=flat-square"/>
 
 # Legend
 
