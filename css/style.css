@@ -171,9 +171,15 @@ body {
     border: transparent;
 }
 
-@media(max-width:767px) {
+@media(max-width:768px) {
     .card {
         margin: 2vh auto;
+    }
+
+    .single-product-img {
+
+        text-align: center;
+        width: 90%;
     }
 }
 
@@ -184,7 +190,7 @@ body {
     border-top-left-radius: 1rem;
 }
 
-@media(max-width:767px) {
+@media(max-width:768px) {
     .cart {
         padding: 3vh;
         border-bottom-left-radius: unset;
@@ -200,7 +206,7 @@ body {
     color: rgb(65, 65, 65);
 }
 
-@media(max-width:767px) {
+@media(max-width:768px) {
     .summary {
         border-top-right-radius: unset;
         border-bottom-left-radius: 1rem;

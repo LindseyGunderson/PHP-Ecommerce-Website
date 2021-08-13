@@ -90,7 +90,7 @@ static function header(){ ?>
                         <div class="back-btn"><a href="/products.php"><i class="fa fa-arrow-left"></i></a></div>
                         </div>
                         <div class="product-main-img">
-                            <div class="text-center p-4"> <img src="imgs/'.$singleProduct->getImg() .'"  width="425" class="single-product-img" /> </div>
+                            <div class="text-center p-4"> <img src="imgs/'.$singleProduct->getImg() .'"  width="425px" class="single-product-img" /> </div>
                         </div>
                     </div>
                     <div class="col-md-6">
